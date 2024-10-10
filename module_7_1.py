@@ -16,19 +16,19 @@ class Shop:
 
     def get_products(self):
         file = open(self._Shop__file_name, "r")
-        a = file.read
+        a = file.read()
         file.close()
         return a
 
     def add(self, *products):
-        for i in products:
-            file = open(self._Shop__file_name, "r")
 
-            if i in file:
-                return print(f'Продукт {i} уже есть в магазине')
+        for i in products:
+            if str(i) in s1.get_products():
+                print(f'Продукт {i} уже есть в магазине')
             else:
                 file = open(self._Shop__file_name, "a")
-                file.write(f'\n {i}')
+                file.write(f'{i} \n')
+                file.close()
 
 s1 = Shop()
 p1 = Product('Potato', 50.5, 'Vegetables')
